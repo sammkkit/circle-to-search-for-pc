@@ -4,14 +4,44 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.samkitjain.circletosearch",
+    "productName": "Circle to Search",
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": ["dmg", "zip"],
+      "icon": "build/icon.icns",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false
+    },
+    "win": {
+      "target": ["nsis", "zip"],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    }
   },
   "keywords": [],
-  "author": "",
+  "author": "Samkit Jain",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "electron": "^41.0.2",
     "tesseract.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^25.1.8"
   }
 }
