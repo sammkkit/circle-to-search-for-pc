@@ -1,7 +1,7 @@
 {
   "name": "circletosearch",
   "version": "1.0.0",
-  "description": "",
+  "description": "Desktop OCR Tool for quick screen text extraction.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -21,7 +21,8 @@
       "target": ["dmg", "zip"],
       "icon": "build/icon.icns",
       "hardenedRuntime": true,
-      "gatekeeperAssess": false
+      "gatekeeperAssess": false,
+      "identity": null
     },
     "win": {
       "target": ["nsis", "zip"],
@@ -38,10 +39,10 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "electron": "^41.0.2",
     "tesseract.js": "^7.0.0"
   },
   "devDependencies": {
+    "electron": "^41.0.2",
     "electron-builder": "^25.1.8"
   }
 }
